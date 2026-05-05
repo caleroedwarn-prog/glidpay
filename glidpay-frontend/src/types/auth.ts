@@ -1,18 +1,18 @@
 // Shape of what user sends to login
-export type LoginRequest{
+export type LoginRequest = {
     username: string
     password: string
 }
 
 // Shape of what FastApi sends back
- export type LoginResponse{
+ export type LoginResponse = {
     token: string
     token_type: string
  }
 
  // shape of the loggedIn user info
 
- export type AuthUser{
+ export type AuthUser = {
     username: string
     email: string
     phone: string
@@ -20,7 +20,7 @@ export type LoginRequest{
 
 // Shape of the login page state
 
-export type LoginState{
+export type LoginState = {
     isLoading: boolean
     isLoggedIn: boolean
     error: string
