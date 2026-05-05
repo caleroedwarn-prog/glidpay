@@ -18,4 +18,10 @@ export interface LoginRequest{
     phone: string
  }
 
-// Shape
+// Shape of the login page state
+
+export interface LoginState{
+    isLoading: boolean
+    isLoggedIn: boolean
+    error: string
+}
