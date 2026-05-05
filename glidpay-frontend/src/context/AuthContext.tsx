@@ -1,4 +1,4 @@
-import { createContext, useContext, useState} from "react"
+import { createContext, useState} from "react"
 import { type AuthUser } from "../types/auth"
 
 
@@ -7,7 +7,6 @@ import { type AuthUser } from "../types/auth"
 type AuthContextType = {
     user: AuthUser | null,
     isLoggedIn: boolean,
-    isLoading: boolean,
     login: (user: AuthUser,token: string) => void,
     logout: () => void
 }
@@ -19,10 +18,9 @@ const AuthContext = createContext<AuthContextType | null>(null)
 export const AuthProvider = ({children}: { children: React.ReactNode}) => {
 
     const [user, setUser] = useState<AuthUser | null>(null)
-    const [isLoading, setIsLoading] = useState(false)
     const [isLoggedIn, setIsLoggedIn] = useState(false)
 
-    const login = (user: AuthUser, token: string) => {
+    const login = (user: AuthUser) => {
         setUser(user)
         setIsLoggedIn(true)
         localStorage.removeItem("token")
@@ -35,13 +33,15 @@ export const AuthProvider = ({children}: { children: React.ReactNode}) => {
     }
 
     return (
-        <AuthContext.Provider value={{ user, isLoading, isLoggedIn, login, logout }}>
+        <AuthContext.Provider value = {{ user, isLoggedIn, login, logout }}>
             {children}
         </AuthContext.Provider>
     )
 }
+export default AuthContext
 
-// Build the hook (shortcut to read the Box)
+
+
 
 
 
