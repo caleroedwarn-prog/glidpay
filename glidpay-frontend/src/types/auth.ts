@@ -4,3 +4,9 @@ export interface LoginRequest{
     password: string
 }
 
+// Shape of what FastApi sends back
+ export interface Authuser{
+    token: string
+    token_type: string
+ }
+
