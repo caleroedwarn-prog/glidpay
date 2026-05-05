@@ -10,6 +10,10 @@ type AuthContextType = {
     isLoading: boolean,
     login: (user: AuthUser,token: string) => void,
     logout: () => void
-
 }
+
+// Create the context (empty box)
+const AuthContext = createContext<AuthContextType | null>(null)
+
+
 
