@@ -5,8 +5,14 @@ export interface LoginRequest{
 }
 
 // Shape of what FastApi sends back
- export interface Authuser{
+ export interface LoginResponse{
     token: string
     token_type: string
+ }
+
+ // shape of the loggedIn user info
+
+ export interface AuthUser{
+    
  }
 
