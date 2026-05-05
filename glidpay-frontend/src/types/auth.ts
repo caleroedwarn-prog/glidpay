@@ -13,6 +13,9 @@ export interface LoginRequest{
  // shape of the loggedIn user info
 
  export interface AuthUser{
-    
+    username: string
+    email: string
+    phone: string
  }
 
+// Shape
