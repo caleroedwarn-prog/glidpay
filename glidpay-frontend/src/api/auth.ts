@@ -1,4 +1,4 @@
-import {type LoginRequest, type LoginResponse } from "../types/auth";
+import {type LoginRequest, type LoginResponse, type RegisterResponse, type RegisterRequest } from "../types/auth";
 
 const BASE_URL = "https://localhost:8000"
 
@@ -15,4 +15,8 @@ export const loginUser = async (form: LoginRequest): Promise<LoginResponse> => {
     }
     const data = await response.json()
     return data
+}
+
+export const RegisterUser = async(form: RegisterRequest): Promise<RegisterResponse> => {
+
 }

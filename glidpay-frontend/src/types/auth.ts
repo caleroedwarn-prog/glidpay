@@ -26,3 +26,16 @@ export type LoginState = {
     isLoggedIn: boolean
     error: string
 }
+
+export type RegisterRequest = {
+    fullname: string
+    username: string
+    phone: string
+    email: string
+    password: string
+}
+
+export type RegisterResponse = {
+    message: string
+    username: string
+}
