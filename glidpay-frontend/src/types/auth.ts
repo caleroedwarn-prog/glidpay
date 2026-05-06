@@ -1,6 +1,3 @@
-import { useContext } from "react"
-import  AuthContext  from "../context/AuthContext"
-
 // Shape of what user sends to login
 export type LoginRequest = {
     username: string
@@ -29,4 +26,3 @@ export type LoginState = {
     isLoggedIn: boolean
     error: string
 }
-
