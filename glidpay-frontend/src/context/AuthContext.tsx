@@ -11,7 +11,7 @@ type AuthContextType = {
     logout: () => void
 }
 
-// Create the context (empty box)
+// Create the context (empty box) custom hook
 const AuthContext = createContext<AuthContextType | null>(null)
 
 // Build the provider (fill the box)
