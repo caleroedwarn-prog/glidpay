@@ -34,6 +34,7 @@ export type RegisterRequest = {
     email: string
     password: string
     confirmpassword: string
+    country: string
 }
 
 export type RegisterResponse = {

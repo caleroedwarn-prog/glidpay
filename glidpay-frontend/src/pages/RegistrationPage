@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom"
 import { RegisterUser } from "../api/auth"
+import  { type RegisterRequest } from "../types/auth";
 
+function RegisterPage(){
 
 const navigate = useNavigate()
 
@@ -26,5 +28,13 @@ const handleSubmit = async () => {
     try{
         const response = await RegisterUser(form)
         register(response.user, response.token)
+        navigate("/login")
+    }catch{
+        setError("please fill in the form")
+    }finally{
+        setIsLoading(false)
     }
 }
+
+}
+export default RegisterPage
