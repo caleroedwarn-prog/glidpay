@@ -18,7 +18,7 @@ export const loginUser = async (form: LoginRequest): Promise<LoginResponse> => {
 }
 
 export const RegisterUser = async(form: RegisterRequest): Promise<RegisterResponse> => {
-    const response = await fetch(`${BASE_URL}/Auth/login`, {
+    const response = await fetch(`${BASE_URL}/Auth/register`, {
         method: "POST", 
         headers: {
             "content-Type": "application/json"

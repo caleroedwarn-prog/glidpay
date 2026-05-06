@@ -1,3 +1,30 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom"
 import { RegisterUser } from "../api/auth"
+
+
+const navigate = useNavigate()
+
+const [form, setForm] = useState<RegisterRequest>({
+    fullname: "",
+    username: "",
+    country: "",
+    phone: "",
+    password: "",
+    confirmpassword: ""
+})
+
+const [error, setError] = useState("")
+const [isLoading, setIsLoading] = useState(false)
+
+const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setForm({...form, [e.target.name] : e.target.value})
+}
+
+const handleSubmit = async () => {
+    setIsLoading(true)
+    try{
+        const response = await RegisterUser(form)
+        register(response.user, response.token)
+    }
+}
