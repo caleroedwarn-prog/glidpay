@@ -12,6 +12,7 @@ const [form, setForm] = useState<RegisterRequest>({
     username: "",
     country: "",
     phone: "",
+    email: "",
     password: "",
     confirmpassword: ""
 })
