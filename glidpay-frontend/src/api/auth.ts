@@ -18,5 +18,14 @@ export const loginUser = async (form: LoginRequest): Promise<LoginResponse> => {
 }
 
 export const RegisterUser = async(form: RegisterRequest): Promise<RegisterResponse> => {
+    const response = await fetch(`${BASE_URL}/Auth/login`, {
+        method: "POST", 
+        headers: {
+            "content-Type": "application/json"
+        },
+        body: JSON.stringify(form)
+    })
 
+    const data = await response.json()
+    return data
 }
